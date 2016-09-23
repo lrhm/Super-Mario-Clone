@@ -1681,22 +1681,25 @@ int main()
 	 fprintf(stderr, "failed to initialize audio codecs!\n");
   }
 
-  if (!al_reserve_samples(5)){
+  if (!al_reserve_samples(10)){
 	 fprintf(stderr, "failed to reserve samples!\n");
   }
 
 
-	cout<<al_filename_exists("mariotheme.wav")<<"\n";
+	cout<<al_filename_exists("media/audio/mariotheme.ogg")<<"\n";
 
-	theme = al_load_sample("mariotheme.wav");
+	theme = al_load_sample("media/audio/mariotheme.ogg");
+	if(theme == NULL)
+		cout<<"not found theme \n";
+
 	cout<<al_get_errno()<<" al get error \n";
-	jump= al_load_sample("media/audio/jump.wav");
-	gOver = al_load_sample("media//audio//gameOver.wav");
-	win =  al_load_sample("media//audio//end.wav");
-	brickBreak =  al_load_sample("media//audio//brickBreak.wav");
-	brickUnBreak =  al_load_sample("media//audio//unbreakable.wav");
-	coin =  al_load_sample("media//audio//coin.wav");
-	bump =  al_load_sample("media//audio//bump.wav");
+	jump= al_load_sample("media/audio/jump.ogg");
+	gOver = al_load_sample("media/audio/gameOver.ogg");
+	win =  al_load_sample("media/audio/end.oggv");
+	brickBreak =  al_load_sample("media/audio/brickBreak.ogg");
+	brickUnBreak =  al_load_sample("media/audio/unbreakable.ogg");
+	coin =  al_load_sample("media/audio/coin.ogg");
+	bump =  al_load_sample("media/audio/bump.ogg");
 	if(!theme)
 		cout<<"not found theme \n";
 
